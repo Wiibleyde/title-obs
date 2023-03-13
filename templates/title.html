@@ -1,0 +1,16 @@
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<div id="myDiv">{{title}}</div>
+<script>
+    // Set time interval to 5 seconds (5000 milliseconds)
+    var reloadInterval = 5000;
+
+    // Reload div after the specified time interval
+    setInterval(function() {
+    $('#myDiv').load(location.href + ' #myDiv', function() {
+            var divValue = $('#myDiv').text();
+            console.log(divValue);
+        });
+    }, reloadInterval);
+</script>
